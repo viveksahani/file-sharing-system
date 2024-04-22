@@ -1,0 +1,70 @@
+1. dotnet
+2. dotnet --version
+3. dotnet new list
+4. dotnet new console -n project_name 
+5. cd project_name
+6. code .
+7. dotnet build
+8. dotnet run
+
+
+
+0.
+1.search for MVC and selet asp.net core web app (model view controller)
+2.name of project
+3.for viewing solution pannel press -> ctrl+alt+L
+4. from solution pannelopen: Views -> shared	(select http from debug pannel)
+controller->
+
+
+
+1. open cmd from where u want to create MVC project 
+2. command to create project: dotnet new mvc --name Project_name
+3. cd Project_name
+4. code .
+5. dotnet build
+6. dotnet run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+String.Compare -> it check character by character if characters are same then check for ascii value is in ascending order or not if not then
+
+
+
+
+
+
+
+
+CFA and DFA
+
+Tools -> NuGet Packet Manager -> 
+
+add-migration InitialMigrate
+update-database
+
+
+DFA (database first approach)
+
+Scaffold-DbContext "Server=HP\MSSQLSERVER01;Database=LibraryManagementSystem; Integrated Security=true;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+
+
+
+
+
+

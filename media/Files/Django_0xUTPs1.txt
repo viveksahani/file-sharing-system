@@ -1,0 +1,174 @@
+Django
+1. make environment : python -m venv env_name
+2. activate environment run :  Script/activate.bat
+3. now install django: go to env_name directory and run the command : pip install django
+4. now make project : django-admin startproject project_name
+5. to create app/module inside your project: python manage.py startapp app_name/module_name
+6. to run the project use code: python manage.py runserver
+7. to change the port number use code: python manage.py runserver 0.0.0.0:5000
+8. to create super user for admin panel: python manage.py createsuperuser
+
+
+
+----------------------migration-----------------------------
+
+1. create class models in models.py of your app
+2. run code: python manage.py makemigrations -> to detect changes make ready to migrate
+3. run code: python manage.py migrate -> to migrate into database
+
+
+------------------------shell-------------------------------
+
+python manage.py shell			# open the shell
+from app_name.models import *		# import models
+
+obj = Class_Name(name = "vivek", rollNo = 23, .....)		# create object
+obj.save()							# save object
+
+obj = Class_Name.objects.create(name = "vivek", rollNo = 3 ....)	# create and save object
+
+Class_Name.objects.all()			# to see all objects of Class_Name model
+Class_Name.objects.all()[0]			# to see specific data of index
+Class_Name.objects.all[0].name			# to see details of specific data
+
+
+---------------------------------- CRUD operation -----------------------------------
+
+				(create, read, update, delete)
+
+ --------
+| creat: |
+ -------- 
+
+python manage.py shell			# open shell
+
+from app1.models import *		# import models
+
+1. obj = Car(name = "nano", speed = 50)			# storing data to database method 1
+		obj.save()
+
+2. Car.objects.create(name = "nano", speed = 50)	# storing data to database method 1
+
+3. obj = {"name" : "nano", "speed" : 50}		# storing data to database method 1
+	Car.objects.create(**obj)
+
+
+ --------
+| read:  |
+ -------- 
+
+Car.objects.all()		# to see all objets of Car model stored in database
+Car.objects.all()[1]		# to see only 2nd object
+Car.objects.all()[1].name	# to name of 2nd object
+Car.objects.all()[1].speed	# to speed of 2nd object
+Car.objects.get(id = 10)	# data of id = 10 (throws exception if not present)
+Car.objects.filter(id = 10)	# data of id = 10 (gives empty QuerySet/List if not present)
+
+
+
+ --------
+| you can overwrite str method of model class to see your output looking good
+|
+| def __str__(self) -> str:
+|        return "name = " + self.name + ", speed = " + str(self.speed)
+ --------
+ --------
+| obj = Car.objects.all()
+|
+| for temp in obj:
+|	print(f"name of car = {temp.name} and speed = {temp.speed}")
+ -----------
+
+
+
+ ----------
+| update:  |
+ ----------
+
+1. 	obj = Car.objects.get(id = 1)		# take object which u want to update
+	obj.name = "creta"			# make update
+	obj.speed = 180
+	obj.save()				# save at end
+
+
+2. Car.objects.filter(id = 1).update(name = "creta dark edition", speed = 190)		# returns 1 on successful update
+
+
+ ----------
+| delete:  |
+ ----------
+
+Car.objects.all().delete()		# deletes all record of Car model
+Car.objects.get(id = 1).delete()	# delete id = 1 data from Car model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
